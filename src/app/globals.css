@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #FBF5EE;
-  --color-cream-dark: #EDE0D0;
+  --color-cream: #FFFDF7;
+  --color-cream-dark: #F5EDDE;
   --color-dusty-rose: #7B2D3B;
   --color-dusty-rose-light: #A8566A;
   --color-sage: #5C6B4E;
@@ -49,7 +49,7 @@
 }
 
 body {
-  background-color: #FBF5EE;
+  background-color: #FFFDF7;
   color: #2C1A12;
 }
 
