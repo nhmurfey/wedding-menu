@@ -320,6 +320,13 @@ export const courses: Course[] = [
       allergens: ["dairy", "gluten", "eggs"],
       image: "/placeholder-dish.svg",
     },
+    vegetarian: {
+      name: "Pumpkin Pie",
+      description:
+        "Classic pumpkin pie — in honour of Nathan's Canadian heritage.",
+      allergens: ["dairy", "gluten", "eggs"],
+      image: "/placeholder-dish.svg",
+    },
     drink: {
       name: "To be announced",
       type: "wine",
