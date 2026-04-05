@@ -23,6 +23,12 @@ export interface Course {
     movie?: { name: string; reason: string };
     image: string;
   };
+  cocktails?: {
+    name: string;
+    label: string;
+    description: string;
+    image: string;
+  }[];
   story: string;
   pairingRationale: string;
 }
@@ -131,7 +137,7 @@ export const courses: Course[] = [
       name: "His & Hers Cocktails",
       type: "cocktail",
       description:
-        "Go find yerself a cocktail! Hers: Negroni — a good old fashioned negroni made with house-made macerated orange gin. His: New York Whiskey Sour — milk-washed whiskey sour with a Barossa shiraz float.",
+        "Go find yerself a cocktail!",
       pokemon: {
         name: "Nidoking & Nidoqueen",
         reason:
@@ -144,6 +150,22 @@ export const courses: Course[] = [
       },
       image: "/placeholder-wine.svg",
     },
+    cocktails: [
+      {
+        name: "Negroni",
+        label: "Hers",
+        description:
+          "A good old fashioned negroni made with house-made macerated orange gin.",
+        image: "/placeholder-wine.svg",
+      },
+      {
+        name: "New York Whiskey Sour",
+        label: "His",
+        description:
+          "Milk-washed whiskey sour with a Barossa shiraz float.",
+        image: "/placeholder-wine.svg",
+      },
+    ],
     story:
       "Go find yerself a cocktail!",
     pairingRationale:

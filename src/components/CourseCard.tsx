@@ -110,27 +110,61 @@ export default function CourseCard({
         </div>
 
         {/* Drink */}
-        <div className="text-center">
-          <div className="relative w-full max-w-[200px] mx-auto aspect-[4/3] mb-6">
-            <Image
-              src={course.drink.image}
-              alt={course.drink.name}
-              fill
-              className="object-contain"
-            />
-          </div>
-          <h3 className="font-serif text-lg md:text-xl text-ink mb-1">
-            {course.drink.name}
-          </h3>
-          {course.drink.region && (
-            <p className={`text-xs tracking-[0.15em] uppercase ${accent} mb-3`}>
-              {course.drink.region}
+        {course.cocktails ? (
+          <div>
+            <p className="text-center font-serif text-lg md:text-xl text-ink mb-6">
+              {course.drink.name}
             </p>
-          )}
-          <p className="text-ink-light text-sm leading-relaxed max-w-md mx-auto italic">
-            {course.drink.description}
-          </p>
-        </div>
+            <p className="text-center text-ink-light text-sm leading-relaxed italic mb-8">
+              {course.drink.description}
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              {course.cocktails.map((cocktail) => (
+                <div key={cocktail.name} className="text-center">
+                  <div className="relative w-full max-w-[160px] mx-auto aspect-[4/3] mb-4">
+                    <Image
+                      src={cocktail.image}
+                      alt={cocktail.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-2`}>
+                    {cocktail.label}
+                  </p>
+                  <h3 className="font-serif text-base md:text-lg text-ink mb-2">
+                    {cocktail.name}
+                  </h3>
+                  <p className="text-ink-light text-xs leading-relaxed italic">
+                    {cocktail.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="text-center">
+            <div className="relative w-full max-w-[200px] mx-auto aspect-[4/3] mb-6">
+              <Image
+                src={course.drink.image}
+                alt={course.drink.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+            <h3 className="font-serif text-lg md:text-xl text-ink mb-1">
+              {course.drink.name}
+            </h3>
+            {course.drink.region && (
+              <p className={`text-xs tracking-[0.15em] uppercase ${accent} mb-3`}>
+                {course.drink.region}
+              </p>
+            )}
+            <p className="text-ink-light text-sm leading-relaxed max-w-md mx-auto italic">
+              {course.drink.description}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Story & Pairing Rationale */}
