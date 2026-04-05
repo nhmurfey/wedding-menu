@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Schedule from "@/components/Schedule";
 import MenuToggle from "@/components/MenuToggle";
 import CourseCard from "@/components/CourseCard";
+import BarMenu from "@/components/BarMenu";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -48,6 +49,8 @@ export default function Home() {
           />
         ))}
       </div>
+
+      <BarMenu />
 
       <Footer />
     </main>

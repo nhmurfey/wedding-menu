@@ -27,6 +27,14 @@ export interface Course {
   pairingRationale: string;
 }
 
+export interface BarDrink {
+  name: string;
+  year: string;
+  description: string;
+  movie?: { name: string };
+  pokemon?: { name: string };
+}
+
 export interface ScheduleEvent {
   time: string;
   title: string;
@@ -78,14 +86,14 @@ export const courses: Course[] = [
       image: "/placeholder-dish.svg",
     },
     vegetarian: {
-      name: "Pumpkin Arancini",
+      name: "Tempura Veg",
       description:
-        "Golden-fried pumpkin arancini with grana padano.",
+        "Crispy tempura vegetables with grana padano.",
       allergens: ["dairy", "gluten"],
       image: "/placeholder-dish.svg",
     },
     drink: {
-      name: "Piper-Heidsieck Champagne",
+      name: "Piper-Heidsieck Champagne NV",
       type: "champagne",
       region: "Champagne, France",
       description:
@@ -113,9 +121,9 @@ export const courses: Course[] = [
     id: 2,
     courseName: "Duck Pastrami",
     dish: {
-      name: "Duck Pastrami with Grilled Stone Fruit",
+      name: "Duck Pastrami",
       description:
-        "House-cured duck pastrami with grilled nectarine and rhubarb chutney finished with cabernet vinegar.",
+        "Duck pastrami, grilled plum and rhubarb chutney with cabernet vinegar.",
       allergens: [],
       image: "/placeholder-dish.svg",
     },
@@ -123,7 +131,7 @@ export const courses: Course[] = [
       name: "His & Hers Cocktails",
       type: "cocktail",
       description:
-        "A pair of bespoke cocktails — one for him, one for her. Go find yours.",
+        "Go find yerself a cocktail! Hers: Negroni — a good old fashioned negroni made with house-made macerated orange gin. His: New York Whiskey Sour — milk-washed whiskey sour with a Barossa shiraz float.",
       pokemon: {
         name: "Nidoking & Nidoqueen",
         reason:
@@ -137,7 +145,7 @@ export const courses: Course[] = [
       image: "/placeholder-wine.svg",
     },
     story:
-      "Go find yours.",
+      "Go find yerself a cocktail!",
     pairingRationale:
       "Sometimes the best pairing isn't a wine — it's a cocktail made just for you.",
   },
@@ -151,49 +159,63 @@ export const courses: Course[] = [
       allergens: ["gluten"],
       image: "/placeholder-dish.svg",
     },
+    vegetarian: {
+      name: "Sous Vide Mushrooms in Bao Buns",
+      description:
+        "Sous vide mushrooms with smoked paprika and garlic — oyster, enoki, king brown, lion's mane, and shiitake — served in soft bao buns.",
+      allergens: ["gluten"],
+      image: "/placeholder-dish.svg",
+    },
     drink: {
-      name: "Settlement Chardonnay",
+      name: "Settlement Chardonnay 2023",
       type: "wine",
       region: "Marlborough, New Zealand",
       description:
-        "Single-vineyard from 30+ year-old organic vines. Ripe stone fruit, baked custard, toasted sourdough, and a flinty mineral edge with creamy mid-palate.",
+        "Seaspray, fresh lemon, seashells. Tastes like lemon curd, yoghurt, chamomile tea and flint.",
       tastingNotes:
-        "Wild fermented in barrel (15% new oak), 12 months on lees. Ripe yellow stone fruit, sweet grapefruit, baked custard, toasted sourdough, popcorn, and white pepper on the nose. Medium-full body with crunchy acidity. 93 pts from Cameron Douglas MS.",
+        "Seaspray, fresh lemon, seashells on the nose. Tastes like lemon curd, yoghurt, chamomile tea and flint. Single-vineyard from 30+ year-old organic vines, wild fermented in barrel.",
       pokemon: {
-        name: "Ninetales",
+        name: "Jolteon",
         reason:
-          "Nine tails = nine layers of flavour (peach, grapefruit, custard, sourdough, popcorn, white pepper, oatmeal, flint). Mystical and wise, lives for a thousand years — this wine is from 30+ year-old vines and is built to age. Elegant and regal but there's real power behind the poise.",
+          "Electric energy in a compact, elegant package. Jolteon is quick, sharp, and sparky — just like the zesty lemon curd and flinty mineral snap of this Chardonnay. Looks soft and approachable but packs a serious jolt when you least expect it.",
       },
       movie: {
-        name: "Spirited Away",
+        name: "The Little Mermaid",
         reason:
-          "Layers of complexity that reveal themselves slowly and reward patience. Crafted with Miyazaki-level care and restraint — nothing wasted, nothing overdone. The flinty mineral edge is the spirit world's strange, crystalline beauty. And like the film, this wine ages beautifully — you notice something new every time.",
+          "Seaspray, seashells, and a world beneath the surface waiting to be discovered. This Chardonnay smells like the ocean and tastes like buried treasure. Ariel wanted to be part of our world — this Marlborough Chardonnay already is.",
       },
       image: "/placeholder-wine.svg",
     },
     story:
       "In honour of Erin Patterson and the mushroom trials. Best thing 2025 had to offer (outside of the proposal of course!).",
     pairingRationale:
-      "The Chardonnay's creamy texture and toasted sourdough notes are a natural match for earthy, umami-rich mushrooms. The flinty acidity cuts through the smokiness.",
+      "The Chardonnay's creamy texture and lemon curd notes are a natural match for earthy, umami-rich mushrooms. The flinty acidity cuts through the smokiness.",
   },
   {
     id: 4,
     courseName: "Spanish Influence",
     dish: {
-      name: "Bruschetta",
+      name: "Anchovy & Smoked Tomato",
       description:
-        "Classic bruschetta — because what we learned after 3 weeks of travelling Spain is: put anchovies on everything.",
+        "Anchovy, smoked tomato gel, sourdough crisp.",
       allergens: ["gluten", "fish"],
       image: "/placeholder-dish.svg",
     },
+    vegetarian: {
+      name: "Heirloom Tomato Bruschetta",
+      description:
+        "Heirloom tomato bruschetta, fresh basil, red onion, toasted sourdough.",
+      allergens: ["gluten"],
+      image: "/placeholder-dish.svg",
+    },
     drink: {
-      name: "Unico Zelo Halcyon Days",
+      name: "Unico Zelo Halcyon Days 2022",
       type: "wine",
       region: "Riverland, South Australia",
       description:
-        "Bright punchy blue and brambly black fruits, peppery spice, meaty chew, and crispy tannins. A finer-boned, Pinot-esque Nero d'Avola. Best served slightly chilled.",
+        "Smells like purple. Tastes like purple. A finer-boned, Pinot-esque Nero d'Avola. Best served slightly chilled.",
       tastingNotes:
-        "Tastes like purple. A pretense-free wine made for good times, good people.",
+        "Smells like purple. Tastes like purple. A pretense-free wine made for good times, good people.",
       pokemon: {
         name: "Magmar",
         reason:
@@ -222,7 +244,7 @@ export const courses: Course[] = [
       image: "/placeholder-dish.svg",
     },
     drink: {
-      name: "Mulline Pinot Noir",
+      name: "Mulline Pinot Noir 2024",
       type: "wine",
       region: "Bellarine Peninsula, Victoria",
       description:
@@ -250,10 +272,10 @@ export const courses: Course[] = [
     id: 6,
     courseName: "Main",
     dish: {
-      name: "Slow Roast Beef",
+      name: "Oyster Blade",
       description:
-        "Slow-roasted beef — impossibly tender, deeply savoury, and worth the wait.",
-      allergens: [],
+        "Oyster blade with broccoli, zucchini and almond salad, cauliflower puree.",
+      allergens: ["nuts"],
       image: "/placeholder-dish.svg",
     },
     vegetarian: {
@@ -264,7 +286,7 @@ export const courses: Course[] = [
       image: "/placeholder-dish.svg",
     },
     drink: {
-      name: "Papi Barossa Shiraz",
+      name: "Grand Papi Barossa Shiraz 2020",
       type: "wine",
       region: "Barossa Valley, South Australia",
       description:
@@ -284,7 +306,7 @@ export const courses: Course[] = [
       image: "/placeholder-wine.svg",
     },
     story:
-      "We love slow-cooked beef. We needed a dish to pair with a heavier red. Holly's beef farming heritage demanded it.",
+      "We needed something to pair with a Barossan Shiraz.",
     pairingRationale:
       "The Shiraz's dark fruit, smoky depth, and powdery tannins are built for slow-roasted beef. A pairing as honest and satisfying as it gets.",
   },
@@ -306,8 +328,38 @@ export const courses: Course[] = [
       image: "/placeholder-wine.svg",
     },
     story:
-      "Nathan's Canadian heritage, represented in pastry form.",
+      "Did you know Nathan's family hails from Canada? We always celebrate Halloween and want to make pumpkin pie.",
     pairingRationale:
       "Stay tuned.",
+  },
+];
+
+export const barDrinks: BarDrink[] = [
+  {
+    name: "Brash Higgins Chenin Blanc",
+    year: "2024",
+    description: "Whoo! Tropical, passionfruit.",
+    movie: { name: "Emperor's New Groove" },
+  },
+  {
+    name: "Sauvignon Blanc Semillon",
+    year: "2023",
+    description:
+      "Passionfruit, zesty, fruity. If you don't generally like sauv blanc, but do like rieslings and pinot gris, still give this a try.",
+    movie: { name: "Madagascar" },
+  },
+  {
+    name: "Xanadu Chardonnay",
+    year: "2024",
+    description:
+      "Smells nutty, like almonds, a little floral and like dried apricot, loquat. Tastes like stonefruit, orange zest and minerals.",
+    movie: { name: "Ice Age" },
+  },
+  {
+    name: "Nero d'Avola Ripple",
+    year: "2024",
+    description: "Tastes like purple.",
+    movie: { name: "Mulan" },
+    pokemon: { name: "Magmar" },
   },
 ];
