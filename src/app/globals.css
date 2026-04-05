@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #FAF6F0;
+  --color-cream-dark: #F2E8DC;
+  --color-dusty-rose: #C9908E;
+  --color-dusty-rose-light: #E8C4C3;
+  --color-sage: #8A9A7B;
+  --color-sage-light: #B5C4A8;
+  --color-mustard: #D4A843;
+  --color-mustard-light: #E8D19A;
+  --color-terracotta: #C07A5A;
+  --color-brown: #6B4F3E;
+  --color-brown-light: #8B6F5E;
+  --color-ink: #3A2E28;
+  --color-ink-light: #6B5D54;
+  --font-serif: var(--font-serif);
+  --font-body: var(--font-body);
+}
+
+@font-face {
+  font-family: 'Decorative';
+  src: local('Georgia');
+}
+
+body {
+  background-color: #FAF6F0;
+  color: #3A2E28;
+}
+
+/* Ornamental divider */
+.ornament::before {
+  content: "✦ ✦ ✦";
+  display: block;
+  text-align: center;
+  letter-spacing: 1em;
+  color: #C4A882;
+  font-size: 0.5rem;
+}
+
+/* Wes Anderson-style frame */
+.wes-frame {
+  border: 2px solid #C9908E;
+  outline: 1px solid #C9908E;
+  outline-offset: 4px;
+}
+
+.wes-frame-sage {
+  border: 2px solid #8A9A7B;
+  outline: 1px solid #8A9A7B;
+  outline-offset: 4px;
+}
+
+.wes-frame-mustard {
+  border: 2px solid #D4A843;
+  outline: 1px solid #D4A843;
+  outline-offset: 4px;
+}
