@@ -292,7 +292,7 @@ export const courses: Course[] = [
   },
   {
     id: 6,
-    courseName: "Main",
+    courseName: "Our First Holiday Together",
     dish: {
       name: "Oyster Blade",
       description:
