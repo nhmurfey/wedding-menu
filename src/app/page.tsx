@@ -7,6 +7,7 @@ import Schedule from "@/components/Schedule";
 import MenuToggle from "@/components/MenuToggle";
 import CourseCard from "@/components/CourseCard";
 import BarMenu from "@/components/BarMenu";
+import FallingLeaves from "@/components/FallingLeaves";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
   const hasAnyVegetarian = courses.some((c) => c.vegetarian);
 
   return (
-    <main className="flex-1">
+    <main className="flex-1 relative">
+      <FallingLeaves />
       <Header />
 
       {/* Schedule */}

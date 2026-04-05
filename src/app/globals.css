@@ -81,3 +81,27 @@ body {
   outline: 1px solid #B8860B;
   outline-offset: 4px;
 }
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--leaf-opacity, 0.2);
+  }
+  50% {
+    transform: translateY(50vh) translateX(var(--drift, 30px)) rotate(180deg);
+  }
+  90% {
+    opacity: var(--leaf-opacity, 0.2);
+  }
+  100% {
+    transform: translateY(105vh) translateX(calc(var(--drift, 30px) * -0.5)) rotate(var(--rotation, 360deg));
+    opacity: 0;
+  }
+}
+
+.animate-leaf-fall {
+  animation: leaf-fall linear infinite;
+}
