@@ -14,7 +14,7 @@ interface Leaf {
   opacity: number;
 }
 
-const leafEmojis = ["🍂", "🍁", "🍃"];
+const leafEmojis = ["🍂", "🍁"];
 
 function createLeaf(id: number): Leaf {
   return {

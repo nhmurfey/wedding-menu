@@ -28,7 +28,7 @@ export default function Header() {
         <div className="mt-8 flex items-center justify-center gap-4">
           <div className="h-px w-12 bg-mustard" />
           <p className="text-brown-light text-sm tracking-[0.25em] uppercase">
-            April 15th, 2026
+            April 25th, 2026
           </p>
           <div className="h-px w-12 bg-mustard" />
         </div>

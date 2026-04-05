@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Holly & Nathan — Wedding Menu",
   description:
-    "A guide to the evening's food, wine, and the stories between them. April 15th, 2026.",
+    "A guide to the evening's food, wine, and the stories between them. April 25th, 2026.",
 };
 
 export default function RootLayout({
