@@ -193,16 +193,16 @@ export const courses: Course[] = [
       description:
         "Bright punchy blue and brambly black fruits, peppery spice, meaty chew, and crispy tannins. A finer-boned, Pinot-esque Nero d'Avola. Best served slightly chilled.",
       tastingNotes:
-        "100% Nero d'Avola. Nutmeg and baking spice on the nose with cedary undertones. Plush red fruits, peppery spice, a salty mineral line, and juicy acidity. Crispy tannins. The winemakers call it 'a pretense-free wine made for good times, good people.'",
+        "Tastes like purple. A pretense-free wine made for good times, good people.",
       pokemon: {
-        name: "Arcanine",
+        name: "Magmar",
         reason:
-          "Fire-type that matches the peppery spice, nutmeg, and warm baking notes. Arcanine looks like it should be a heavy bruiser but its signature trait is speed and grace — just like this Nero d'Avola that should be big and heavy but is instead finer-boned and nimble. Both are loyal, warm-hearted, and belong at a good time with friends.",
+          "All heat, all intensity, but weirdly graceful about it. Magmar's flame body and molten energy match the peppery spice and meaty chew of this Nero d'Avola. Looks intimidating but is actually a lot of fun once you get to know it — just like this wine served chilled.",
       },
       movie: {
-        name: "Ratatouille",
+        name: "Mulan",
         reason:
-          "Unpretentious origins, unexpected finesse. It comes from the Riverland (not exactly prestige wine country), much like Remy is the 'wrong' species to be a chef — but both deliver something genuinely refined from humble beginnings. A pretense-free wine made for good times, just like 'anyone can cook.'",
+          "Underestimated, from unexpected origins, and quietly brilliant. Mulan pretends to be something she's not to prove what she is — this Nero d'Avola from the Riverland pretends to be a big, heavy red but is actually finer-boned and nimble. Both are braver than they look.",
       },
       image: "/placeholder-wine.svg",
     },
@@ -217,7 +217,7 @@ export const courses: Course[] = [
     dish: {
       name: "Masterstock Braised Pork Belly & Brussels Sprouts",
       description:
-        "Masterstock braised pork belly, sous vide and grilled brussels sprouts with mustard and lemon.",
+        "Masterstock braised pork belly, sous vide and grilled Brussels sprouts with mustard and lemon.",
       allergens: [],
       image: "/placeholder-dish.svg",
     },
@@ -226,23 +226,23 @@ export const courses: Course[] = [
       type: "wine",
       region: "Bellarine Peninsula, Victoria",
       description:
-        "Bright crimson and luminous. Wild strawberries, dried roses, white pepper, and dried mountain herbs. Silken tannins, bright acidity, and an emphatic finish.",
+        "Compost, mushrooms, smoky, violets, and cigar box on the nose. Cherry, salty, vegetal, and mineral on the palate. A Pinot from our favourite region.",
       tastingNotes:
-        "Cool-climate Pinot from Geelong. Wild strawberries, raspberries, kirsch, dried roses, white pepper, and dried mountain herbs on the nose. Light-medium body with silken fine-grained tannins and restrained oak. 94-97 pts across Halliday. Campbell Mattinson calls Mulline 'a star.'",
+        "A Pinot from our favourite region — the West. Smells like compost, mushrooms, smoky, violets, cigar box. Tastes like cherry, salty, vegetal, minerals.",
       pokemon: {
         name: "Butterfree",
         reason:
-          "Delicate, beautiful, light on its feet — but don't underestimate it. The perfumed nose of dried roses, wild strawberries, and white pepper is basically Butterfree's compound eyes picking up every scent in a meadow. Evolves from something humble (Caterpie from Geelong) into something genuinely gorgeous. Signature move Sleep Powder? That's what this wine's aromatics do to you.",
+          "Delicate, beautiful, light on its feet — but don't underestimate it. The perfumed nose of violets and smoky cigar box is basically Butterfree's compound eyes picking up every scent in a meadow. Evolves from something humble (Caterpie from Geelong) into something genuinely gorgeous. Signature move Sleep Powder? That's what this wine's aromatics do to you.",
       },
       movie: {
-        name: "My Neighbor Totoro",
+        name: "Treasure Planet",
         reason:
-          "Quiet magic discovered in a gentle countryside landscape — that's the Bellarine Peninsula. Light, delicate, and beautiful but with genuine wonder underneath. The perfumed nose of dried roses and wild strawberries is literally Totoro's forest. Satsuki and Mei finding Totoro = you discovering a $37 Pinot scoring 97 points.",
+          "An underrated gem that most people haven't discovered yet. Adventurous, layered, and deeply rewarding if you give it a chance — just like a cool-climate Pinot from Geelong that smells like cigar box and violets but tastes like cherry and minerals. Both deserve way more recognition than they get.",
       },
       image: "/placeholder-wine.svg",
     },
     story:
-      "We always order the brussels sprouts. Always. If they're on the menu, they're on our table.",
+      "We always order the Brussels sprouts. Always. If they're on the menu, they're on our table.",
     pairingRationale:
       "Our favourite pinots are found in the West — Grampians or, like this one, the Bellarine region. The Pinot's bright acidity and silken tannins lift the richness of the braised pork belly.",
   },
@@ -284,7 +284,7 @@ export const courses: Course[] = [
       image: "/placeholder-wine.svg",
     },
     story:
-      "We love slow cooked beef. We needed a dish to pair with a heavier red. Holly's beef farming heritage demanded it.",
+      "We love slow-cooked beef. We needed a dish to pair with a heavier red. Holly's beef farming heritage demanded it.",
     pairingRationale:
       "The Shiraz's dark fruit, smoky depth, and powdery tannins are built for slow-roasted beef. A pairing as honest and satisfying as it gets.",
   },

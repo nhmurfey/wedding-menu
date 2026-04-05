@@ -140,7 +140,7 @@ export default function CourseCard({
           <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}>
             The Story
           </p>
-          <p className="font-serif text-ink-light text-sm md:text-base leading-relaxed italic">
+          <p className="font-body text-ink-light text-sm md:text-base leading-relaxed italic">
             &ldquo;{course.story}&rdquo;
           </p>
         </div>
