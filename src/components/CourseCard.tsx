@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Course } from "@/data/menu";
 
@@ -34,25 +35,30 @@ interface CourseCardProps {
   course: Course;
   index: number;
   isVegetarian: boolean;
+  totalCourses: number;
 }
 
 export default function CourseCard({
   course,
   index,
   isVegetarian,
+  totalCourses,
 }: CourseCardProps) {
+  const [showExtras, setShowExtras] = useState(false);
   const dish =
     isVegetarian && course.vegetarian ? course.vegetarian : course.dish;
   const frame = frameColors[index % frameColors.length];
   const accent = accentColors[index % accentColors.length];
   const bg = bgColors[index % bgColors.length];
+  const hasExtras =
+    course.drink.tastingNotes || course.drink.pokemon || course.drink.movie;
 
   return (
     <article className="max-w-2xl mx-auto px-4">
       {/* Course number & name */}
       <div className="text-center mb-8">
         <p className={`text-xs tracking-[0.4em] uppercase ${accent} mb-2`}>
-          Course {course.id} of 6
+          Course {course.id} of {totalCourses}
         </p>
         <h2 className="font-serif text-3xl md:text-4xl text-ink">
           {course.courseName}
@@ -103,24 +109,26 @@ export default function CourseCard({
           <div className="h-px flex-1 bg-cream-dark" />
         </div>
 
-        {/* Wine */}
+        {/* Drink */}
         <div className="text-center">
           <div className="relative w-full max-w-[200px] mx-auto aspect-[4/3] mb-6">
             <Image
-              src={course.wine.image}
-              alt={course.wine.name}
+              src={course.drink.image}
+              alt={course.drink.name}
               fill
               className="object-contain"
             />
           </div>
           <h3 className="font-serif text-lg md:text-xl text-ink mb-1">
-            {course.wine.name}
+            {course.drink.name}
           </h3>
-          <p className={`text-xs tracking-[0.15em] uppercase ${accent} mb-3`}>
-            {course.wine.region}
-          </p>
+          {course.drink.region && (
+            <p className={`text-xs tracking-[0.15em] uppercase ${accent} mb-3`}>
+              {course.drink.region}
+            </p>
+          )}
           <p className="text-ink-light text-sm leading-relaxed max-w-md mx-auto italic">
-            {course.wine.description}
+            {course.drink.description}
           </p>
         </div>
       </div>
@@ -146,6 +154,70 @@ export default function CourseCard({
             {course.pairingRationale}
           </p>
         </div>
+
+        {/* Tap to reveal extras */}
+        {hasExtras && (
+          <div className="text-center pt-4">
+            <button
+              onClick={() => setShowExtras(!showExtras)}
+              className={`text-xs tracking-[0.3em] uppercase ${accent} border-b border-current pb-0.5 hover:opacity-70 transition-opacity cursor-pointer`}
+            >
+              {showExtras ? "Hide the nerdy bits" : "Tap for the nerdy bits"}
+            </button>
+
+            {showExtras && (
+              <div className="mt-6 space-y-6 text-left">
+                {/* Tasting Notes */}
+                {course.drink.tastingNotes && (
+                  <div className="text-center">
+                    <p
+                      className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}
+                    >
+                      Tasting Notes
+                    </p>
+                    <p className="text-ink-light text-sm leading-relaxed">
+                      {course.drink.tastingNotes}
+                    </p>
+                  </div>
+                )}
+
+                {/* Pokemon */}
+                {course.drink.pokemon && (
+                  <div className="text-center">
+                    <p
+                      className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}
+                    >
+                      If this wine were a Pok&eacute;mon
+                    </p>
+                    <p className="font-serif text-ink text-base mb-2">
+                      {course.drink.pokemon.name}
+                    </p>
+                    <p className="text-ink-light text-sm leading-relaxed">
+                      {course.drink.pokemon.reason}
+                    </p>
+                  </div>
+                )}
+
+                {/* Movie */}
+                {course.drink.movie && (
+                  <div className="text-center">
+                    <p
+                      className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}
+                    >
+                      If this wine were a children&apos;s movie
+                    </p>
+                    <p className="font-serif text-ink text-base mb-2">
+                      {course.drink.movie.name}
+                    </p>
+                    <p className="text-ink-light text-sm leading-relaxed">
+                      {course.drink.movie.reason}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

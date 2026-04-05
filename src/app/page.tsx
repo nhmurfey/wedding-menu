@@ -44,6 +44,7 @@ export default function Home() {
             course={course}
             index={i}
             isVegetarian={isVegetarian}
+            totalCourses={courses.length}
           />
         ))}
       </div>

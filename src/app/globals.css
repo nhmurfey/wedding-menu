@@ -1,31 +1,56 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #FAF6F0;
-  --color-cream-dark: #F2E8DC;
-  --color-dusty-rose: #C9908E;
-  --color-dusty-rose-light: #E8C4C3;
-  --color-sage: #8A9A7B;
-  --color-sage-light: #B5C4A8;
-  --color-mustard: #D4A843;
-  --color-mustard-light: #E8D19A;
-  --color-terracotta: #C07A5A;
-  --color-brown: #6B4F3E;
-  --color-brown-light: #8B6F5E;
-  --color-ink: #3A2E28;
-  --color-ink-light: #6B5D54;
-  --font-serif: var(--font-serif);
-  --font-body: var(--font-body);
+  --color-cream: #FBF5EE;
+  --color-cream-dark: #EDE0D0;
+  --color-dusty-rose: #7B2D3B;
+  --color-dusty-rose-light: #A8566A;
+  --color-sage: #5C6B4E;
+  --color-sage-light: #8A9B76;
+  --color-mustard: #B8860B;
+  --color-mustard-light: #D4A843;
+  --color-terracotta: #A0522D;
+  --color-brown: #4A3228;
+  --color-brown-light: #6B4F3E;
+  --color-ink: #2C1A12;
+  --color-ink-light: #5C4033;
+  --font-serif: 'Tilda', Georgia, serif;
+  --font-body: 'Josefin Sans', sans-serif;
 }
 
 @font-face {
-  font-family: 'Decorative';
-  src: local('Georgia');
+  font-family: 'Tilda';
+  src: url('/fonts/tilda-grande.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tilda';
+  src: url('/fonts/tilda-petite.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('/fonts/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
 }
 
 body {
-  background-color: #FAF6F0;
-  color: #3A2E28;
+  background-color: #FBF5EE;
+  color: #2C1A12;
 }
 
 /* Ornamental divider */
@@ -40,19 +65,19 @@ body {
 
 /* Wes Anderson-style frame */
 .wes-frame {
-  border: 2px solid #C9908E;
-  outline: 1px solid #C9908E;
+  border: 2px solid #7B2D3B;
+  outline: 1px solid #7B2D3B;
   outline-offset: 4px;
 }
 
 .wes-frame-sage {
-  border: 2px solid #8A9A7B;
-  outline: 1px solid #8A9A7B;
+  border: 2px solid #5C6B4E;
+  outline: 1px solid #5C6B4E;
   outline-offset: 4px;
 }
 
 .wes-frame-mustard {
-  border: 2px solid #D4A843;
-  outline: 1px solid #D4A843;
+  border: 2px solid #B8860B;
+  outline: 1px solid #B8860B;
   outline-offset: 4px;
 }
