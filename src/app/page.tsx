@@ -39,15 +39,17 @@ export default function Home() {
 
       {/* Courses */}
       <div className="space-y-20 py-8">
-        {courses.map((course, i) => (
-          <CourseCard
-            key={course.id}
-            course={course}
-            index={i}
-            isVegetarian={isVegetarian}
-            totalCourses={courses.length}
-          />
-        ))}
+        {courses
+          .filter((course) => !isVegetarian || course.vegetarian)
+          .map((course, i) => (
+            <CourseCard
+              key={course.id}
+              course={course}
+              index={i}
+              isVegetarian={isVegetarian}
+              totalCourses={courses.filter((c) => !isVegetarian || c.vegetarian).length}
+            />
+          ))}
       </div>
 
       <BarMenu />
