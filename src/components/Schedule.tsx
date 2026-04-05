@@ -43,7 +43,7 @@ export default function Schedule() {
                   <div className="w-[calc(50%-1rem)] text-right">
                     {i % 2 === 0 ? (
                       <>
-                        <p className="text-mustard font-serif text-lg font-semibold">
+                        <p className="text-mustard text-lg font-semibold">
                           {event.time}
                         </p>
                         <p className="text-brown-light text-xs tracking-[0.15em] uppercase mt-1">
@@ -68,7 +68,7 @@ export default function Schedule() {
                       </p>
                     ) : (
                       <>
-                        <p className="text-mustard font-serif text-lg font-semibold">
+                        <p className="text-mustard text-lg font-semibold">
                           {event.time}
                         </p>
                         <p className="text-brown-light text-xs tracking-[0.15em] uppercase mt-1">
