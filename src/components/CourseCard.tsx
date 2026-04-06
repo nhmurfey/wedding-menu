@@ -121,14 +121,6 @@ export default function CourseCard({
             <div className="grid grid-cols-2 gap-6">
               {course.cocktails.map((cocktail) => (
                 <div key={cocktail.name} className="text-center">
-                  <div className="relative w-full max-w-[160px] mx-auto aspect-[4/3] mb-4">
-                    <Image
-                      src={cocktail.image}
-                      alt={cocktail.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
                   <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-2`}>
                     {cocktail.label}
                   </p>
@@ -144,14 +136,6 @@ export default function CourseCard({
           </div>
         ) : (
           <div className="text-center">
-            <div className="relative w-full max-w-[200px] mx-auto aspect-[4/3] mb-6">
-              <Image
-                src={course.drink.image}
-                alt={course.drink.name}
-                fill
-                className="object-contain"
-              />
-            </div>
             <h3 className="font-serif text-lg md:text-xl text-ink mb-1">
               {course.drink.name}
             </h3>
