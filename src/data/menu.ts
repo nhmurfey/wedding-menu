@@ -129,7 +129,7 @@ export const courses: Course[] = [
     dish: {
       name: "Duck Pastrami",
       description:
-        "Duck pastrami, grilled plum and rhubarb chutney with cabernet vinegar.",
+        "Duck pastrami, grilled nectarine and rhubarb chutney with cabernet vinegar.",
       allergens: [],
       image: "/placeholder-dish.svg",
     },
