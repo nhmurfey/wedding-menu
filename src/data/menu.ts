@@ -332,6 +332,11 @@ export const courses: Course[] = [
 
 export const barDrinks: BarDrink[] = [
   {
+    name: "Chandon Blanc de Blancs",
+    year: "NV",
+    description: "Sparkling. 100% Chardonnay — crisp, citrus, and celebratory.",
+  },
+  {
     name: "Brash Higgins Chenin Blanc",
     year: "2024",
     description: "Whoo! Tropical, passionfruit.",
