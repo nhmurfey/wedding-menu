@@ -5,15 +5,13 @@ export interface Course {
     name: string;
     description: string;
     allergens: string[];
-    image: string;
   };
   vegetarian?: {
     name: string;
     description: string;
     allergens: string[];
-    image: string;
   };
-  drink: {
+  drink?: {
     name: string;
     type: "wine" | "cocktail" | "champagne";
     region?: string;
@@ -21,16 +19,14 @@ export interface Course {
     tastingNotes?: string;
     pokemon?: { name: string; reason: string };
     movie?: { name: string; reason: string };
-    image: string;
   };
   cocktails?: {
     name: string;
     label: string;
     description: string;
-    image: string;
   }[];
   story: string;
-  pairingRationale: string;
+  pairingRationale?: string;
 }
 
 export interface BarDrink {
@@ -61,7 +57,7 @@ export const schedule: ScheduleEvent[] = [
   {
     time: "4:00 PM",
     title: "Champagne & Jazz",
-    description: "Bubbles and celebrations while we steal away for photos.",
+    description: "Time for photos with family and friends.",
   },
   {
     time: "4:45 PM",
@@ -89,14 +85,12 @@ export const courses: Course[] = [
       description:
         "Crispy fried chicken with truffle fries and grana padano.",
       allergens: ["dairy", "gluten"],
-      image: "/placeholder-dish.svg",
     },
     vegetarian: {
       name: "Tempura Veg",
       description:
         "Crispy tempura vegetables with grana padano.",
       allergens: ["dairy", "gluten"],
-      image: "/placeholder-dish.svg",
     },
     drink: {
       name: "Piper-Heidsieck Champagne NV",
@@ -116,7 +110,6 @@ export const courses: Course[] = [
         reason:
           "Arrives with a pop, practically perfect, and makes everything instantly more fun. Bright, bubbly, and celebratory on the surface but surprisingly deep underneath. The Marilyn Monroe connection = old Hollywood glamour = Julie Andrews descending with an umbrella. And the spoonful of sugar? That's the 10g/l dosage.",
       },
-      image: "/placeholder-wine.svg",
     },
     story:
       "Fried foods and champagne is a surprising but perfect pairing, just like the bride and groom.",
@@ -131,7 +124,6 @@ export const courses: Course[] = [
       description:
         "Duck pastrami, grilled nectarine and rhubarb chutney with cabernet vinegar.",
       allergens: [],
-      image: "/placeholder-dish.svg",
     },
     drink: {
       name: "His & Hers Cocktails",
@@ -148,7 +140,6 @@ export const courses: Course[] = [
         reason:
           "A love story between two people who weren't supposed to go together but turned out to be perfect. Also, there's layers. Like an onion. Like a cocktail.",
       },
-      image: "/placeholder-wine.svg",
     },
     cocktails: [
       {
@@ -156,14 +147,12 @@ export const courses: Course[] = [
         label: "Hers",
         description:
           "A good old fashioned negroni made with house-made macerated orange gin.",
-        image: "/placeholder-wine.svg",
       },
       {
         name: "New York Whiskey Sour",
         label: "His",
         description:
           "Milk-washed whiskey sour with a Barossa shiraz float.",
-        image: "/placeholder-wine.svg",
       },
     ],
     story:
@@ -179,14 +168,12 @@ export const courses: Course[] = [
       description:
         "Sous vide mushrooms with smoked paprika and garlic — oyster, enoki, king brown, lion's mane, and shiitake — served in soft bao buns.",
       allergens: ["gluten"],
-      image: "/placeholder-dish.svg",
     },
     vegetarian: {
       name: "Sous Vide Mushrooms in Bao Buns",
       description:
         "Sous vide mushrooms with smoked paprika and garlic — oyster, enoki, king brown, lion's mane, and shiitake — served in soft bao buns.",
       allergens: ["gluten"],
-      image: "/placeholder-dish.svg",
     },
     drink: {
       name: "Settlement Chardonnay 2023",
@@ -206,7 +193,6 @@ export const courses: Course[] = [
         reason:
           "Seaspray, seashells, and a world beneath the surface waiting to be discovered. This Chardonnay smells like the ocean and tastes like buried treasure. Ariel wanted to be part of our world — this Marlborough Chardonnay already is.",
       },
-      image: "/placeholder-wine.svg",
     },
     story:
       "In honour of Erin Patterson and the mushroom trials. Best thing 2025 had to offer (outside of the proposal of course!).",
@@ -221,14 +207,12 @@ export const courses: Course[] = [
       description:
         "Anchovy, smoked tomato gel, sourdough crisp.",
       allergens: ["gluten", "fish"],
-      image: "/placeholder-dish.svg",
     },
     vegetarian: {
       name: "Heirloom Tomato Bruschetta",
       description:
         "Heirloom tomato bruschetta, fresh basil, red onion, toasted sourdough.",
       allergens: ["gluten"],
-      image: "/placeholder-dish.svg",
     },
     drink: {
       name: "Unico Zelo Halcyon Days 2022",
@@ -248,7 +232,6 @@ export const courses: Course[] = [
         reason:
           "Underestimated, from unexpected origins, and quietly brilliant. Mulan pretends to be something she's not to prove what she is — this Nero d'Avola from the Riverland pretends to be a big, heavy red but is actually finer-boned and nimble. Both are braver than they look.",
       },
-      image: "/placeholder-wine.svg",
     },
     story:
       "Our trip to Spain proved that pintxos can still be enjoyed despite a broken rib (Nathan), stolen earrings (Holly) and a crashed hire car (Holly & Nathan). We emerged from Spain with a love of pintxos and anchovies.",
@@ -263,7 +246,6 @@ export const courses: Course[] = [
       description:
         "Masterstock braised pork belly, sous vide and grilled Brussels sprouts with mustard and lemon.",
       allergens: [],
-      image: "/placeholder-dish.svg",
     },
     drink: {
       name: "Mulline Pinot Noir 2024",
@@ -283,7 +265,6 @@ export const courses: Course[] = [
         reason:
           "An underrated gem that most people haven't discovered yet. Adventurous, layered, and deeply rewarding if you give it a chance — just like a cool-climate Pinot from Geelong that smells like cigar box and violets but tastes like cherry and minerals. Both deserve way more recognition than they get.",
       },
-      image: "/placeholder-wine.svg",
     },
     story:
       "We always order the Brussels sprouts. Always. If they're on the menu, they're on our table.",
@@ -298,17 +279,15 @@ export const courses: Course[] = [
       description:
         "Oyster blade with broccoli, zucchini and almond salad, cauliflower puree.",
       allergens: ["nuts"],
-      image: "/placeholder-dish.svg",
     },
     vegetarian: {
       name: "Eggplant & Chickpea Tagine",
       description:
         "Eggplant and chickpea tagine, served with spiced couscous and fresh herbs.",
       allergens: ["gluten"],
-      image: "/placeholder-dish.svg",
     },
     drink: {
-      name: "Grand Papi Barossa Shiraz 2020",
+      name: "Grand Pappy Barossa Shiraz 2020",
       type: "wine",
       region: "Barossa Valley, South Australia",
       description:
@@ -325,7 +304,6 @@ export const courses: Course[] = [
         reason:
           "This wine announces itself like Moana standing on the bow screaming 'I am Moana of Motunui!' The deep earthiness and connection to ancient land (Barossa's 150+ year old vines) mirrors Moana's ancestral connection to her island. Te Ka the lava demon is the tannin structure — dark and imposing but revealing something beautiful underneath.",
       },
-      image: "/placeholder-wine.svg",
     },
     story:
       "We needed something to pair with a Barossan Shiraz.",
@@ -340,26 +318,15 @@ export const courses: Course[] = [
       description:
         "Classic pumpkin pie — in honour of Nathan's Canadian heritage.",
       allergens: ["dairy", "gluten", "eggs"],
-      image: "/placeholder-dish.svg",
     },
     vegetarian: {
       name: "Pumpkin Pie",
       description:
         "Classic pumpkin pie — in honour of Nathan's Canadian heritage.",
       allergens: ["dairy", "gluten", "eggs"],
-      image: "/placeholder-dish.svg",
-    },
-    drink: {
-      name: "To be announced",
-      type: "wine",
-      description:
-        "Something sweet to close out the evening.",
-      image: "/placeholder-wine.svg",
     },
     story:
       "Did you know Nathan's family hails from Canada? We always celebrate Halloween and want to make pumpkin pie.",
-    pairingRationale:
-      "Stay tuned.",
   },
 ];
 
@@ -387,7 +354,8 @@ export const barDrinks: BarDrink[] = [
   {
     name: "Nero d'Avola Ripple",
     year: "2024",
-    description: "Tastes like purple.",
+    description:
+      "Translucent garnet hue with a nose redolent of blueberries and candied wild strawberries and blue fruits with a touch of musk. On the palate, bright and juicy with red fruits and acidity. Nice with a light chill.",
     movie: { name: "Mulan" },
     pokemon: { name: "Magmar" },
   },

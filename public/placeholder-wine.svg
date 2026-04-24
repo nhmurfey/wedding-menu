@@ -1,8 +1,0 @@
-<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#F2E8DC"/>
-  <path d="M190 80 L185 160 Q185 180 200 180 Q215 180 215 160 L210 80 Z" fill="none" stroke="#8B6F5E" stroke-width="1.5"/>
-  <line x1="200" y1="180" x2="200" y2="230" stroke="#8B6F5E" stroke-width="1.5"/>
-  <ellipse cx="200" cy="232" rx="20" ry="4" fill="none" stroke="#8B6F5E" stroke-width="1.5"/>
-  <path d="M188 130 Q200 120 212 130" fill="#8B6F5E" opacity="0.15"/>
-  <text x="200" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8B6F5E" letter-spacing="3">WINE</text>
-</svg>

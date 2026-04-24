@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Course } from "@/data/menu";
 
 const frameColors = [
@@ -51,7 +50,7 @@ export default function CourseCard({
   const accent = accentColors[index % accentColors.length];
   const bg = bgColors[index % bgColors.length];
   const hasExtras =
-    course.drink.tastingNotes || course.drink.pokemon || course.drink.movie;
+    !!course.drink && (course.drink.pokemon || course.drink.movie);
 
   return (
     <article className="max-w-2xl mx-auto px-4">
@@ -79,14 +78,6 @@ export default function CourseCard({
       <div className={`${frame} p-6 md:p-10 ${bg}`}>
         {/* Dish */}
         <div className="text-center mb-8">
-          <div className="relative w-full max-w-[280px] mx-auto aspect-[4/3] mb-6">
-            <Image
-              src={dish.image}
-              alt={dish.name}
-              fill
-              className="object-cover"
-            />
-          </div>
           <h3 className="font-serif text-xl md:text-2xl text-ink mb-3">
             {dish.name}
           </h3>
@@ -100,54 +91,67 @@ export default function CourseCard({
           )}
         </div>
 
-        {/* Divider */}
-        <div className="flex items-center justify-center gap-4 my-8">
-          <div className="h-px flex-1 bg-cream-dark" />
-          <span className="text-brown-light text-xs tracking-[0.2em] italic">
-            paired with
-          </span>
-          <div className="h-px flex-1 bg-cream-dark" />
-        </div>
-
-        {/* Drink */}
-        {course.cocktails ? (
-          <div>
-            <p className="text-center font-serif text-lg md:text-xl text-ink mb-6">
-              {course.drink.name}
-            </p>
-            <p className="text-center text-ink-light text-sm leading-relaxed italic mb-8">
-              {course.drink.description}
-            </p>
-            <div className="grid grid-cols-2 gap-6">
-              {course.cocktails.map((cocktail) => (
-                <div key={cocktail.name} className="text-center">
-                  <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-2`}>
-                    {cocktail.label}
-                  </p>
-                  <h3 className="font-serif text-base md:text-lg text-ink mb-2">
-                    {cocktail.name}
-                  </h3>
-                  <p className="text-ink-light text-xs leading-relaxed italic">
-                    {cocktail.description}
-                  </p>
-                </div>
-              ))}
+        {(course.drink || course.cocktails) && (
+          <>
+            {/* Divider */}
+            <div className="flex items-center justify-center gap-4 my-8">
+              <div className="h-px flex-1 bg-cream-dark" />
+              <span className="text-brown-light text-xs tracking-[0.2em] italic">
+                paired with
+              </span>
+              <div className="h-px flex-1 bg-cream-dark" />
             </div>
-          </div>
-        ) : (
-          <div className="text-center">
-            <h3 className="font-serif text-lg md:text-xl text-ink mb-1">
-              {course.drink.name}
-            </h3>
-            {course.drink.region && (
-              <p className={`text-xs tracking-[0.15em] uppercase ${accent} mb-3`}>
-                {course.drink.region}
-              </p>
-            )}
-            <p className="text-ink-light text-sm leading-relaxed max-w-md mx-auto italic">
-              {course.drink.description}
-            </p>
-          </div>
+
+            {/* Drink */}
+            {course.cocktails ? (
+              <div>
+                {course.drink && (
+                  <>
+                    <p className="text-center font-serif text-lg md:text-xl text-ink mb-6">
+                      {course.drink.name}
+                    </p>
+                    <p className="text-center text-ink-light text-sm leading-relaxed italic mb-8">
+                      {course.drink.description}
+                    </p>
+                  </>
+                )}
+                <div className="grid grid-cols-2 gap-6">
+                  {course.cocktails.map((cocktail) => (
+                    <div key={cocktail.name} className="text-center">
+                      <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-2`}>
+                        {cocktail.label}
+                      </p>
+                      <h3 className="font-serif text-base md:text-lg text-ink mb-2">
+                        {cocktail.name}
+                      </h3>
+                      <p className="text-ink-light text-xs leading-relaxed italic">
+                        {cocktail.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : course.drink ? (
+              <div className="text-center">
+                <h3 className="font-serif text-lg md:text-xl text-ink mb-1">
+                  {course.drink.name}
+                </h3>
+                {course.drink.region && (
+                  <p className={`text-xs tracking-[0.15em] uppercase ${accent} mb-3`}>
+                    {course.drink.region}
+                  </p>
+                )}
+                <p className="text-ink-light text-sm leading-relaxed max-w-md mx-auto italic">
+                  {course.drink.description}
+                </p>
+                {course.drink.tastingNotes && (
+                  <p className="text-ink-light text-sm leading-relaxed max-w-md mx-auto mt-4">
+                    {course.drink.tastingNotes}
+                  </p>
+                )}
+              </div>
+            ) : null}
+          </>
         )}
       </div>
 
@@ -164,17 +168,19 @@ export default function CourseCard({
         </div>
 
         {/* Pairing */}
-        <div className="text-center">
-          <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}>
-            Why It Works
-          </p>
-          <p className="text-ink-light text-sm leading-relaxed">
-            {course.pairingRationale}
-          </p>
-        </div>
+        {course.pairingRationale && (
+          <div className="text-center">
+            <p className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}>
+              Why It Works
+            </p>
+            <p className="text-ink-light text-sm leading-relaxed">
+              {course.pairingRationale}
+            </p>
+          </div>
+        )}
 
         {/* Tap to reveal extras */}
-        {hasExtras && (
+        {hasExtras && course.drink && (
           <div className="text-center pt-4">
             <button
               onClick={() => setShowExtras(!showExtras)}
@@ -185,20 +191,6 @@ export default function CourseCard({
 
             {showExtras && (
               <div className="mt-6 space-y-6 text-left">
-                {/* Tasting Notes */}
-                {course.drink.tastingNotes && (
-                  <div className="text-center">
-                    <p
-                      className={`text-xs tracking-[0.3em] uppercase ${accent} mb-3`}
-                    >
-                      Tasting Notes
-                    </p>
-                    <p className="text-ink-light text-sm leading-relaxed">
-                      {course.drink.tastingNotes}
-                    </p>
-                  </div>
-                )}
-
                 {/* Pokemon */}
                 {course.drink.pokemon && (
                   <div className="text-center">
@@ -207,11 +199,8 @@ export default function CourseCard({
                     >
                       If this wine were a Pok&eacute;mon
                     </p>
-                    <p className="font-serif text-ink text-base mb-2">
+                    <p className="font-serif text-ink text-base">
                       {course.drink.pokemon.name}
-                    </p>
-                    <p className="text-ink-light text-sm leading-relaxed">
-                      {course.drink.pokemon.reason}
                     </p>
                   </div>
                 )}
@@ -224,11 +213,8 @@ export default function CourseCard({
                     >
                       If this wine were a children&apos;s movie
                     </p>
-                    <p className="font-serif text-ink text-base mb-2">
+                    <p className="font-serif text-ink text-base">
                       {course.drink.movie.name}
-                    </p>
-                    <p className="text-ink-light text-sm leading-relaxed">
-                      {course.drink.movie.reason}
                     </p>
                   </div>
                 )}
